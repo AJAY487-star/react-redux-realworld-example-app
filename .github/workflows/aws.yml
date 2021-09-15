@@ -20,8 +20,8 @@ jobs:
    - name: Create CodeDeploy Deployment
      id: deploy
      run: |
-       aws deploy create-deployment \
-         --application-name node-js-app-github-action \
-         --deployment-group-name node-js-deploy-group-ajay \
-         –-deployment-config-name CodeDeployDefault.OneAtATime \
-         -–github-location repository=${{ github.repository }},commitId=${{ github.sha }}
+          aws deploy create-deployment \
+            --application-name node-js-app-github-action \
+            --deployment-group-name node-js-deploy-group-ajay \
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
